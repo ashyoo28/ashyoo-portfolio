@@ -4,18 +4,18 @@ import { BlurFade } from "@/components/ui/blur-fade";
 
 export default function Home() {
   const experience = [
-    { index: 0, year: "2024", title: "UX WRITING GUIDELINES FOR VINYLC" },
+    { index: 1, year: "2024", title: "UX WRITING GUIDELINES FOR VINYLC" },
     {
-      index: 1,
+      index: 2,
       year: "2024",
       title: "SERVICE STRATEGY CONSULTING FOR SKT A. (MESSENGER SERVICE)",
     },
     {
-      index: 2,
+      index: 3,
       year: "2023",
       title: "UX/UI CONSULTING FOR LOTTE DUTY FREE",
     },
-    { index: 3, year: "2022", title: "UX/UI CONSULTING FOR CJ CGV" },
+    { index: 4, year: "2022", title: "UX/UI CONSULTING FOR CJ CGV" },
   ];
 
   return (
