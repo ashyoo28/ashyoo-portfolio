@@ -1,17 +1,16 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import type { PageProps } from "next";
 import { works } from "@/lib/works";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { MouseSpotlight } from "@/components/MouseSpotlight";
+
+type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
   return works.map((w) => ({ slug: w.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps<"/works/[slug]">) {
+export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const work = works.find((w) => w.slug === slug);
   if (!work) return {};
@@ -21,9 +20,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function WorkDetailPage({
-  params,
-}: PageProps<"/works/[slug]">) {
+export default async function WorkDetailPage({ params }: Props) {
   const { slug } = await params;
   const work = works.find((w) => w.slug === slug);
   if (!work) notFound();
